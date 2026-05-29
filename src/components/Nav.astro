@@ -65,9 +65,26 @@ const { current = '' } = Astro.props;
 
   a {
     margin-left: 15px;
-    min-width: 0;
-    padding: 8px 2px;
+    min-width: 0; 
     font-size: 0.85rem;
+  }
+
+  .theme-toggle-container {
+    margin-left: auto;
+    width: auto;
+  }
+}
+
+@media (max-width: 450px) {
+  nav {
+    flex: 1;
+    min-width: 0;
+  }
+
+  a {
+    margin-left: 8px;
+    min-width: 0; 
+    font-size: 0.6rem;
   }
 
   .theme-toggle-container {
