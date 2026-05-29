@@ -39,6 +39,16 @@ const socialUrl = Astro.site.href + 'assets/social.png'
 
 <ClientRouter />
 
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const hash = window.location.hash;
+    if (hash) {
+      const el = document.querySelector(hash);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+</script>
+
 <!-- This is intentionally inlined to avoid FOUC -->
 <script is:inline>
   const root = document.documentElement

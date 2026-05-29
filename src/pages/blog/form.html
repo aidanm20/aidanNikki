@@ -1,14 +1,147 @@
-<form name="contact" method="POST" data-netlify="true">
-  <p>
-    <label>Your Name: <input type="text" name="name" /></label>
-  </p>
-  <p>
-    <label>Your Email: <input type="email" name="email" /></label>
-  </p> 
-  <p>
-    <label>Message: <textarea name="message"></textarea></label>
-  </p>
-  <p>
-    <button type="submit">Send</button>
-  </p>
-</form>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1&display=swap");
+
+      :root {
+        --background-body: #f0ecbf;
+        --surface: rgba(255, 250, 238, 0.72);
+        --surface-border: rgba(36, 33, 28, 0.14);
+        --text-main: rgb(36, 33, 28);
+        --text-secondary: #6b6f72;
+        --primary-color: rgb(213, 90, 92);
+        --font-family-serif: "Shippori Mincho B1", Merriweather, serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        padding: 32px 20px;
+        font-family: var(--font-family-serif);
+        color: var(--text-main);
+        background:
+          radial-gradient(circle at top, rgba(213, 90, 92, 0.18), transparent 32%),
+          var(--background-body);
+      }
+
+      .form-shell {
+        width: min(100%, 720px);
+        margin: 0 auto;
+        padding: 40px;
+        border: 1px solid var(--surface-border);
+        border-radius: 28px;
+        background: var(--surface);
+        backdrop-filter: blur(8px);
+        box-shadow: 0 22px 50px rgba(36, 33, 28, 0.1);
+      }
+
+      h1 {
+        margin: 0 0 12px;
+        font-size: clamp(2.6rem, 6vw, 4rem);
+        line-height: 1;
+      }
+
+      .intro {
+        margin: 0 0 28px;
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: var(--text-secondary);
+      }
+
+      form {
+        display: grid;
+        gap: 18px;
+      }
+
+      label {
+        display: grid;
+        gap: 8px;
+        font-size: 1rem;
+        letter-spacing: 0.02em;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        border: 1px solid rgba(36, 33, 28, 0.18);
+        border-radius: 16px;
+        padding: 14px 16px;
+        font: inherit;
+        color: inherit;
+        background: rgba(255, 255, 255, 0.72);
+        transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+      }
+
+      textarea {
+        min-height: 180px;
+        resize: vertical;
+      }
+
+      input:focus,
+      textarea:focus {
+        outline: none;
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 4px rgba(213, 90, 92, 0.18);
+        transform: translateY(-1px);
+      }
+
+      button {
+        justify-self: start;
+        border: 0;
+        border-radius: 999px;
+        padding: 14px 24px;
+        font: inherit;
+        color: #fff8ef;
+        background: var(--primary-color);
+        cursor: pointer;
+        box-shadow: 0 12px 24px rgba(213, 90, 92, 0.28);
+        transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+      }
+
+      button:hover,
+      button:focus-visible {
+        transform: translateY(-2px);
+        box-shadow: 0 16px 30px rgba(213, 90, 92, 0.34);
+        filter: saturate(1.05);
+      }
+
+      @media (max-width: 640px) {
+        body {
+          padding: 20px 14px;
+        }
+
+        .form-shell {
+          padding: 26px 20px;
+          border-radius: 22px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="form-shell">
+        <form name="contact" method="POST" data-netlify="true">
+        <label>
+          Your Name
+          <input type="text" name="name" />
+        </label>
+        <label>
+          Your Email
+          <input type="email" name="email" />
+        </label>
+        <label>
+          Message
+          <textarea name="message"></textarea>
+        </label>
+        <button type="submit">Send</button>
+      </form>
+    </main>
+  </body>
+</html>
