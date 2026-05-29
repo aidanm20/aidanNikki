@@ -22,7 +22,7 @@ const { Content } = await render(post)
 <BaseLayout title={title} description={description} permalink={permalink} current="blog">
   <header>
     <p>{new Date(publishDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} ~ {readingTimeEstimate}</p>
-    <div style="font-size: 50px; font-weight: 700;">{title}</div>
+    <div style="font-size: 40px; font-weight: 700;">{title}</div>
     
   </header>
   <div class="container">
