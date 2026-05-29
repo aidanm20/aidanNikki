@@ -1,0 +1,172 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content'
+const title = 'My Astro Blog';
+const description = 'The perfect starter for your perfect blog.';
+const permalink = Astro.site.href;
+
+let x = 'hello'
+
+let allPosts = await getCollection('posts')
+allPosts = allPosts.sort((a, b) => new Date(b.data.publishDate).valueOf() - new Date(a.data.publishDate).valueOf());
+ let post = allPosts[0]
+ const href = `/blog/${post.data.slug}`
+---
+
+<BaseLayout title={title} description={description} permalink={permalink}>
+  <div class="home-container">
+     
+    <div class="home-copy"> 
+          <div class="headerWrap"  >
+          <h1><span style="color: rgb(210, 84, 84); text-shadow: 0 0 18px rgba(210, 84, 84, 0.45), 0 0 6px rgba(210, 84, 84, 0.2);">Aidan</span>  日記</h1>
+          <h1>栄典 Nikki</h1>
+        </div>
+  
+       
+      
+      <p style="font-size: 16px; margin-top: -0.5em; ">my developer journal</p>
+    </div>
+<span class="seal seal1" id="seal">栄</span>
+<span class="seal seal2" id="seal">典</span> 
+    <div class="hero-image-container">
+       <div  class="latestHeader">latest entry</div>
+       <div>{
+        
+        <div class="post-item"    >
+            <h2>　
+              <a href={href}>{post.data.title}</a>
+            </h2>
+            <p>{post.data.description}</p>
+            <div class="post-item-footer">
+              <span class="post-item-date">— {new Date(post.data.publishDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+            </div>
+          </div>
+          }</div>
+  </div>
+  </div>
+</BaseLayout>
+
+<style>
+
+ 
+
+  .latestHeader {
+padding-top: 20px; 
+font-weight: 900;
+display: flex;
+    align-items: center;
+  }
+
+  .latestHeader::before,
+.latestHeader::after {
+  content: "";
+  flex: 1;  
+  border-bottom: 1px solid ; 
+  margin: 0 15px; 
+}
+
+  .home-container {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    margin: 2em 0;
+    min-height: 400px;
+  }
+
+  .headerWrap {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    font-weight: bolder;
+  }
+
+  .home-copy {
+    flex: 1;
+    padding: 0 1em; 
+    display: flex;
+    flex-direction: column;
+    align-items: center
+  }
+
+  .home-copy h1 {
+    font-weight: 900;
+    margin-bottom: 0.5em;
+    line-height: 1.3;
+  }
+
+  .home-copy p {
+    font-size: 1.4em;
+  }
+
+  .seal{
+  position: fixed;                 /* stays put while page scrolls */
+               /* where it lives */ 
+  font-weight: 800;
+   
+   opacity: .1;
+  user-select: none;               /* can't highlight it */
+  pointer-events: none;            /* clicks pass through */
+  will-change: transform;          /* perf hint */
+   
+}
+ 
+
+ 
+
+.seal1 {
+  left: 25%; top: 30%; 
+  transform: translate3d(0,0,0) rotate(15deg);
+  font-size: 240px;
+}
+
+.seal2 {
+  left: 65%; top: 50%; 
+  transform: translate3d(0,0,0) rotate(-5deg);
+  font-size: 290px;
+}
+
+  .hero-image-container {
+    margin: 0 1em;
+    text-align: center; 
+    flex: 1; 
+    padding-bottom: 30px;
+    border-bottom: 1px solid; 
+  }
+
+  .hero-image-container picture {
+    display: block;
+    min-height: 250px;
+  }
+
+  
+ 
+  @media (min-width: 1100px) {
+    .hero-image-container {
+      max-width: 500px;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    p {
+      font-size: 1.2em;
+    }
+
+     
+  }
+
+  @media (max-width: 800px) {
+    .home-container {
+      flex-direction: column;
+    }
+
+     
+
+    .home-copy {
+      flex: 0;
+      padding-bottom: 2em;
+      text-align: center;
+    }
+  }
+ 
+</style>

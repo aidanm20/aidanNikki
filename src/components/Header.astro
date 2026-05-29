@@ -1,0 +1,66 @@
+---
+ 
+import Nav from './Nav.astro'
+
+const { current = '' } = Astro.props;
+---
+
+<style>
+  header {
+    display: flex;
+    margin: 0 auto;
+    max-width: 1400px;
+    padding: 2em;
+    width: 100%;
+  }
+
+   .aIcon {
+  background-color: rgb(213, 90, 92);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 22px;
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  border-radius: 12px;                /* a touch rounder reads nicer */
+
+  /* the glow — soft falloff instead of a hard ring */
+  box-shadow:
+    0 8px 22px -6px rgba(213, 90, 92, 0.75),  /* cast glow below */
+    0 0 18px      rgba(213, 90, 92, 0.45),    /* ambient halo     */
+    inset 0 0 0 1px rgba(255, 255, 255, 0.12); /* subtle edge      */
+
+  rotate: -10deg;
+  scale: 1;
+  /* animate rotate, scale AND the glow */
+  transition: rotate 0.35s cubic-bezier(0.22, 0.61, 0.36, 1),
+              scale  0.35s cubic-bezier(0.22, 0.61, 0.36, 1),
+              box-shadow 0.35s ease;
+  will-change: rotate, scale;
+}
+
+.aIcon:hover {
+  rotate: 4deg;        /* swings the other way */
+  scale: 1.08;
+  box-shadow:
+    0 12px 30px -6px rgba(213, 90, 92, 0.9),
+    0 0 26px       rgba(213, 90, 92, 0.6),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+}
+
+   
+
+  @media screen and (max-width: 520px) {
+    header {
+      padding: 2em 0;
+    }
+  }
+</style>
+
+<header> 
+  <a href="/" style="text-decoration: none; color: inherit;"><div class="aIcon" style="flex: 0 0 50px;" >栄</div></a>
+   
+  <Nav current={current} />
+</header>

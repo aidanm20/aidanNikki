@@ -1,0 +1,89 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'About';
+const description = 'About your blog.';
+const permalink = `${Astro.site.href}about`;
+---
+
+<BaseLayout title={title} description={description} permalink={permalink} current="about">
+  <div class="container">
+    <h1>About</h1>
+    <figure class="about-image">
+      <img src="/assets/aboutPhoto.png" alt="Illustration of a me" width="330">
+       
+    </figure>
+     <p>
+      Hello, nice to meet you! This is my first post on my developer journal Aidan Nikki. I'm a CS student based in Los Angeles, heading into my second in the fall. My main interest within the field is web development, and I wanted a space to document the projects I build, the challenges I face, and my thought processes.
+      </p><p> 
+The name 'Aidan Nikki' comes from 日記 (nikki), the Japanese word for diary. I'm half Japanese and grew up in Japan, so I thought I'd mix in a Japanese word. Still not sure if I like the name so it may change in the future but it's the best I could come up with for now. </p><p> 
+This is my journal where I mainly write on my personal projects I do as a developer but also a place to write about things that interest me. I love doing creative web projects using things like ThreeJS, Blender, drawings, and a lot of css, and I love to tie my projects with personal interests I have outside of coding. Things like tennis, music, video games (osu, brawl stars, minecraft), and drawing are just some of my hobbies (i have a lot of them) and I have a lot of fun projects planned out! </p><p> I’m still a relatively new developer and I hope to improve my skills step by step with each project. I have decided to start this to document my projects, and I hope to capture things like my thinking process, challenges, and cool stuff I find. Also if you want to collaborate or work on anything feel free to reach out to me! I love doing cool stuff so as long as it's interesting I am willing to help.
+
+     </p>
+  </div>
+  
+ <span class="seal--stamp seal3" id="seal">発</span>
+
+<span class="seal--stamp seal4" id="seal">開 </span>
+<span class="seal--stamp seal5" id="seal">創 </span>
+</BaseLayout>
+ 
+
+<style>
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+  .about-image {
+    float: right;
+    margin: -3em -7em 2em 2em;
+    max-width: 300px;
+  }
+
+  .about-image img {
+    border-radius: 8px;
+    margin-bottom: 1.5em;
+  }
+
+  @media (max-width: 1020px) {
+    .about-image {
+      float: none;
+      margin: 0 auto 2em;
+    }
+  }
+
+.seal--stamp{
+  position: fixed;
+  width: 87px;
+  height: 87px;
+  display: grid;
+  place-items: center;              /* centers the character */
+  font-size: 40px;
+  color: rgb(213, 90, 92);          /* character = red */
+  border: 4px solid rgb(213, 90, 92);
+  opacity: .9;
+  border-radius: 16px;
+  user-select: none;               /* can't highlight it */
+  pointer-events: none;
+  box-shadow:
+    0 0 14px rgba(213, 90, 92, 0.35),
+    0 4px 18px -4px rgba(213, 90, 92, 0.25);
+}
+.seal3 {
+    left: 10%; top: 80%;
+    transform: translate3d(0,0,0) rotate(-5deg);
+    z-index: 1;
+}
+.seal4 {
+    left: 80%; top: 20%;
+    transform: translate3d(0,0,0) rotate(20deg);
+    z-index: 1;
+}
+
+.seal5 {
+    left: 35%; top: 50%;
+    transform: translate3d(0,0,0) rotate(-230deg);
+    z-index: 1;
+}
+
+</style>
