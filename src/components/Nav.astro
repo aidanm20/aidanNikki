@@ -75,11 +75,6 @@ const { current = '' } = Astro.props;
 
 <script>
   document.getElementById('contact')?.addEventListener('click', (e) => {
-    const bio = document.getElementById('bio');
-    if (bio) {
-      e.preventDefault();
-      bio.scrollIntoView({ behavior: 'smooth' });
-    }
-    // if no bio on this page, let the #bio href navigate naturally
+    window.scrollTo(0, document.body.scrollHeight);
   });
 </script>
