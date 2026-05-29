@@ -40,13 +40,26 @@ const socialUrl = Astro.site.href + 'assets/social.png'
 <ClientRouter />
 
 <script>
-  document.addEventListener('astro:page-load', () => {
-    const hash = window.location.hash;
-    if (hash) {
-      const el = document.querySelector(hash);
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
+  const scrollToRequestedTarget = () => {
+    const params = new URLSearchParams(window.location.search)
+    if (params.get('scroll') === 'bottom') {
+      window.scrollTo({
+        top: document.documentElement.scrollHeight,
+        behavior: 'smooth',
+      })
+      return
     }
-  });
+
+    const hash = window.location.hash
+    if (hash) {
+      const el = document.querySelector(hash)
+      if (el) el.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
+  document.addEventListener('astro:page-load', () => {
+    scrollToRequestedTarget()
+  })
 </script>
 
 <!-- This is intentionally inlined to avoid FOUC -->
