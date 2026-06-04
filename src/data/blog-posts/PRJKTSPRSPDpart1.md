@@ -1,8 +1,8 @@
 ---
-title: "PRJKTSPRSPD Part 1: Building My Music Player & Audio Mixer Web App"
+title: "PRJKTSPRSPD Part 1: Creating the Ultimate Music Player Experience"
 slug: PRJKTSPRSPDpart1
 publishDate: 2026-05-30
-description: blank
+description: An overview of PRJKTSPRSPD, my music player and audio mixer web app, and the biggest lessons I learned from building it.
 ---
 
 Hello again! This is my second post on Aidan Nikki. 
@@ -13,7 +13,7 @@ For this post, I wanted to talk about one of the bigger projects I have been wor
 
 ## The basic idea
 
-I know from the image it looks like a lot but I'll break it down for you. Basically, PRJKTSPRSPD is a music player and audio mixer. The alternative to your beloved Spotify. And to all your beloved Spotify listeners your platform is a bit [sus](https://www.theguardian.com/music/2025/jul/31/spotify-musicians-david-bridie-ntwnfb). You can import songs from your device that will be saved to the browser, change the pitch and speed, add effects like reverb or bitcrushing, manage a queue, and watch the 3D vaporwave background move to the beat. I also wanted to go for a different UI from the average music player, allowing the user to control everything in one screen. A criticism I've gotten is that the screen can get very crowded due to this but I personally prefer it to the modern music players like Spotify or Evermusic (what I use) as I feel like I have to tap through so many different buttons and tabs to find what I want. On larger screens, I see my UI as totally dominant. On mobile, maybe its more preference based, though mine works perfectly on mobile (I use it everyday in the car).
+I know from the image it looks like a lot but I'll break it down for you. Basically, PRJKTSPRSPD is a music player and audio mixer. The alternative to your beloved Spotify. And to all your beloved Spotify listeners your platform is a bit [sus](https://www.theguardian.com/music/2025/jul/31/spotify-musicians-david-bridie-ntwnfb). You can import songs from your device that will be saved to the browser, change the pitch and speed, add effects like reverb or bitcrushing, manage a queue, and watch the 3D vaporwave background move to the beat. I also wanted to go for a different UI from the average music player, allowing the user to control everything in one screen. A criticism I've gotten is that the screen can get very crowded due to this but I personally prefer it to the modern music players like Spotify or Evermusic (what I use) as I feel like I have to tap through so many different buttons and tabs to find what I want. On larger screens, I see my UI absolutely crushing the competition. On mobile, maybe its more preference based, though mine works perfectly on mobile (I use it everyday in the car).
 
 So yeah that's the basic rundown I suppose. Oh I forgot to mention! There's also a pomodoro timer (25 min on 5 min off cycles) for work. At the time I was making this project I often listened to Hollow Knight pomodoro playlists so I thought having it built in to the music app would be a great idea. But yeah let me get into why I built this. 
 
@@ -203,16 +203,7 @@ A lot of frontend development is not just putting a button on the page. It is de
 So shuffle is just one small feature, but it includes randomization, queue management, current song handling, loop behavior, visual feedback, and a bunch of edge cases! And with the amount of features on this site you can imagine the amount of time it took to build this whole thing.
 
 ### Creative coding and building UI is really difficult, but can be simplified!
-
-So I'm the type of person that gets really ambitious with design. When starting a project, I imagine it having some crazy award winning designs. I underestimate the workload and tell myself I'll figure it out when I get there. This mindset has failed a few of my personal projects in the past. I try to make something design heavy and end up with a barely functional mess. 
-
-That's why this project I wanted to keep the designs more "simple". I know that looking at the site it can look pretty complex (and it was), but it wasn't as bad as some of the other projects I've attempted. Anyhow, the lesson I'm trying to share is that *you can simplify your ideal vision for the design and still have it look good*. 
-
-Also having experience with my stack helped a lot. I have made various projects with ThreeJS, GSAP, and CSS. The only new tool I used was Libresprite for the pixel art, but I have some experience using Aseprite and the Pixelart app on my phone. I also had a clear idea of how I wanted the UI to look when I started the project. I wanted a desktop-like interface with a taskbar at the bottom.
-
-I'll definitely be making a post detailing how I did all the designs but let me give you the basic rundown because there's not too much? maybe?
-
-So for the 3D background, visually there's only the sun, scattered stars, the sky, and the vaporwave ground with mountains thing. The icons I made are simple pixel art. The windows have a lot of shared CSS and the desktop is pretty simple CSS. Moving the song order in the queue with GSAP and the pop up menus when hitting the three dots was a bit complicated but not too terrible. And really that's all there is. 
+ 
 
 I am the type of person who gets really ambitious with design. Whenever I start a project, I imagine it having some crazy award-winning interface with animations everywhere, perfect visuals, custom assets, and a super unique layout. Then I tell myself, "I'll figure it out when I get there."
 
@@ -250,4 +241,8 @@ Ambitious design is fun, but if the scope is too big, the project can collapse u
 
 ---
 
-Well I'll keep it at that for now! I'll see you in the next one hopefully.
+Well, I’ll keep it at that for now. This post was mostly the overview, but in the next parts I want to go deeper into the actual systems: how the browser stores the songs, how the audio engine works, how I built the desktop UI, and how the Three.js background reacts to the music.
+
+This project ended up being way bigger than I expected, but that is also what made it fun. It started as a simple music player and slowly turned into a mix of audio programming, creative coding, UI design, and me getting mad at music apps.
+
+If you have questions or feedback, or want to talk about anything, work on a project, please please please feel free to reach out.
