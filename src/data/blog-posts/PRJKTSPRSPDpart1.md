@@ -60,7 +60,7 @@ Ok ok so I'd love to go into each file and the detailed process for each one but
 <img src="/public/assets/css.png" width="200" alt="Description">
 <img src="/public/assets/svgs.png" width="200" alt="Description">
  
-Look at all these files man... and this isn't even all of it!!! But the good thing is the important stuff is in just a few files! So we'll go into them now. So lock in because now we're getting into the [meat](https://www.youtube.com/watch?v=UrrHnagerGw&pp=ygUMbWVhdCAyc2xpbWV5)! Also real quick, the repo is free so go take a look at the code as you read. [ClICK HERE FOR THE RePO](https://github.com/aidanm20/PRJKTSPRSPD)
+Look at all these files man.. and this isn't even all of it!!! But the good thing is the important stuff is in just a few files! So we'll go into them now. So lock in because now we're getting into the [meat](https://www.youtube.com/watch?v=UrrHnagerGw&pp=ygUMbWVhdCAyc2xpbWV5)! Also real quick, the repo is free so go take a look at the code as you read. [ClICK HERE FOR THE RePO](https://github.com/aidanm20/PRJKTSPRSPD)
 
 The first important file is `App.jsx`. This is kind of the brain of the app. It keeps track of the main state, like whether music is playing, what song is currently selected, the list of imported songs, the queue, and whether loop or shuffle is active.
 
@@ -213,9 +213,6 @@ Also having experience with my stack helped a lot. I have made various projects 
 I'll definitely be making a post detailing how I did all the designs but let me give you the basic rundown because there's not too much? maybe?
 
 So for the 3D background, visually there's only the sun, scattered stars, the sky, and the vaporwave ground with mountains thing. The icons I made are simple pixel art. The windows have a lot of shared CSS and the desktop is pretty simple CSS. Moving the song order in the queue with GSAP and the pop up menus when hitting the three dots was a bit complicated but not too terrible. And really that's all there is. 
-
-
-
 
 I am the type of person who gets really ambitious with design. Whenever I start a project, I imagine it having some crazy award-winning interface with animations everywhere, perfect visuals, custom assets, and a super unique layout. Then I tell myself, "I'll figure it out when I get there."
 
